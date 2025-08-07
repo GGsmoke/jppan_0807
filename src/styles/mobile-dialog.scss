@@ -1,0 +1,244 @@
+/* 移动端弹窗适配样式 */
+@media (max-width: 768px) {
+  /* Element Plus Dialog 移动端适配 */
+  .el-dialog {
+    width: 95vw !important;
+    max-width: 400px !important;
+    // 修改：直接设置为居中位置，避免左上角闪现
+    margin: 0 !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    
+    /* 确保弹窗在小屏幕上不会太高 */
+    max-height: 90vh !important;
+    
+    /* 弹窗位置调整 - 移除可能导致跳转的样式 */
+    &.is-align-center {
+      // 移除可能导致跳转的margin设置
+      margin: 0 !important;
+      /* 添加平滑过渡，避免突然跳转 */
+      transition: opacity 0.3s ease, visibility 0.3s ease !important;
+    }
+  }
+  
+  .el-dialog__header {
+    padding: 16px 20px 10px !important;
+    
+    .el-dialog__title {
+      font-size: 1.1rem !important;
+      line-height: 1.4 !important;
+    }
+  }
+  
+  .el-dialog__body {
+    padding: 10px 20px 20px !important;
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+  }
+  
+  .el-dialog__footer {
+    padding: 10px 20px 20px !important;
+  }
+  
+  /* 二维码容器适配 */
+  .qr-container {
+    padding: 16px 0 !important;
+    
+    .qr-code {
+      width: 160px !important;
+      height: 160px !important;
+      margin-bottom: 12px !important;
+    }
+    
+    p {
+      font-size: 0.9rem !important;
+      line-height: 1.4 !important;
+      margin-bottom: 8px !important;
+      
+      &.tip {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+  
+  /* 下载选项适配 */
+  .download-options {
+    gap: 12px !important;
+    
+    .download-option {
+      h4 {
+        font-size: 0.9rem !important;
+        margin-bottom: 8px !important;
+      }
+      
+      .qr-code {
+        width: 100px !important;
+        height: 100px !important;
+      }
+    }
+    
+    .download-btn {
+      padding: 12px 16px !important;
+      font-size: 0.9rem !important;
+      
+      i {
+        font-size: 1rem !important;
+      }
+    }
+  }
+  
+  /* 表单适配 */
+  .redeem-form {
+    .form-group {
+      label {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px !important;
+      }
+      
+      input {
+        padding: 12px !important;
+        font-size: 1rem !important;
+        border-radius: 6px !important;
+      }
+    }
+  }
+  
+  /* 按钮适配 */
+  .dialog-footer {
+    gap: 12px !important;
+    
+    .el-button {
+      padding: 10px 20px !important;
+      font-size: 0.9rem !important;
+      min-width: 80px !important;
+    }
+  }
+  
+  /* 视频弹窗适配 */
+  .video-dialog {
+    .el-dialog {
+      width: 95vw !important;
+      max-width: none !important;
+    }
+    
+    .video-container {
+      max-width: none !important;
+    }
+    
+    .explanation-video {
+      width: 100% !important;
+      height: auto !important;
+    }
+    
+    .no-video-message {
+      padding: 24px 0 !important;
+      
+      i {
+        font-size: 2rem !important;
+        margin-bottom: 12px !important;
+      }
+      
+      p {
+        font-size: 1rem !important;
+      }
+    }
+  }
+  
+  /* 图片放大弹窗适配 */
+  .image-modal {
+    .image-modal-content {
+      width: 95vw !important;
+      height: 95vh !important;
+      
+      .image-container {
+        padding: 10px !important;
+        
+        .close-btn {
+          top: 5px !important;
+          right: 5px !important;
+          width: 32px !important;
+          height: 32px !important;
+          font-size: 1.2rem !important;
+        }
+      }
+      
+      .scroll-hint {
+        font-size: 0.8rem !important;
+        padding: 8px !important;
+      }
+    }
+    
+    .modal-image {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  
+  /* 特定弹窗类型的额外适配 */
+  .purchase-dialog,
+  .download-dialog,
+  .contact-dialog,
+  .audio-permission-dialog,
+  .video-permission-dialog,
+  .redeem-dialog,
+  .word-detail-dialog,
+  .enroll-dialog,
+  .area-code-dialog,
+  .success-dialog {
+    .el-dialog {
+      // 修改：确保所有弹窗都直接居中显示
+      margin: 0 !important;
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      /* 添加平滑过渡效果 */
+      transition: opacity 0.3s ease, visibility 0.3s ease !important;
+    }
+  }
+}
+
+/* 超小屏幕适配 (小于480px) */
+@media (max-width: 480px) {
+  .el-dialog {
+    width: 98vw !important;
+    margin: 2vh auto !important;
+  }
+  
+  .el-dialog__body {
+    padding: 8px 16px 16px !important;
+  }
+  
+  .qr-container .qr-code {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  .download-options .download-option .qr-code {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 触摸友好的按钮 */
+  .el-button {
+    min-height: 44px !important; /* iOS推荐的最小触摸目标 */
+    touch-action: manipulation; /* 防止双击缩放 */
+  }
+  
+  /* 关闭按钮优化 */
+  .el-dialog__headerbtn {
+    width: 44px !important;
+    height: 44px !important;
+    top: 8px !important;
+    right: 8px !important;
+  }
+  
+  /* 滚动区域优化 */
+  .el-dialog__body {
+    -webkit-overflow-scrolling: touch; /* iOS平滑滚动 */
+  }
+}
